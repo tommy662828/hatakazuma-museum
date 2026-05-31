@@ -204,6 +204,6 @@ footer{
 
     /* nav が縦に伸びるので header を下げる */
     header{
-        padding-top: 200px; /* ← ここが最重要 */
+        padding-top: 350px; /* ← ここが最重要 */
     }
 }
