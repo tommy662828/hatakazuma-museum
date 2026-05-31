@@ -268,7 +268,7 @@ footer{
 
     /* nav が高いのでスライダーを下げる */
     .slider{
-        margin-top: 170px; /* ← ここが超重要 */
+        margin-top: 220px; /* ← ここが超重要 */
         height: 55vh;      /* スマホでは少し低く */
     }
 
