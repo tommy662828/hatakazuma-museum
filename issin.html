@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>はたかずま記念館 / हाता काज़ुमा स्मारक संग्रहालय</title>
+
+    <link rel="stylesheet" href="issin.css">
+</head>
+
+<body>
+
+
+    <!-- ナビ -->
+    <nav>
+
+        <a href="issin.html" class="logo"
+          data-ja="はたかずま記念館"
+          data-hi="हाता काज़ुमा स्मारक संग्रहालय">
+          はたかずま記念館
+         </a>
+
+
+        <ul>
+            <li><a href="exhibition.html"
+                data-ja="常設展示"
+                data-hi="स्थायी प्रदर्शनी">常設展示</a></li>
+
+            <li><a href="donation.html"
+                data-ja="寄付のお願い"
+                data-hi="दान हेतु निवेदन">寄付のお願い</a></li>
+
+            <li><a href="access.html"
+                data-ja="アクセス"
+                data-hi="पहुंच">アクセス</a></li>
+        </ul>
+
+        <div class="lang-switcher">
+            <button onclick="switchLang('ja')">日本語</button>
+            <button onclick="switchLang('hi')">हिन्दी</button>
+        </div>
+
+    </nav>
+
+
+    <!-- スライダー -->
+    <section class="slider">
+        <img src="welcome.png" class="slide active">
+        <img src="linesticker.png" class="slide">
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+
+        <div class="section-title"
+            data-ja="ABOUT US"
+            data-hi="हमारे बारे में">
+            ABOUT US
+        </div>
+
+        <div class="about-container">
+
+            <img src="館長.jpg">
+
+            <div class="about-text">
+
+                <h2 data-ja="館長プロフィール"
+                    data-hi="निदेशक का परिचय">
+                    館長プロフィール
+                </h2>
+
+                <p data-ja="池田智成（いけだともなり）。広島県出身。"
+                   data-hi="तोमोनारी इकेदा, हिरोशिमा प्रान्त के निवासी।">
+                    池田智成（いけだともなり）。広島県出身。
+                </p>
+
+                <p data-ja="大学時代にはたかずまに出会い、その圧倒的なカリスマ性に魅せられ記念館設立を決意。"
+                   data-hi="विश्वविद्यालय के दिनों में हाता काज़ुमा से भेंट हुई। उनकी अद्वितीय करिश्माई उपस्थिति से गहराई से प्रभावित होकर, इस स्मारक संग्रहालय की स्थापना का संकल्प लिया।">
+                    大学時代にはたかずまに出会い、その圧倒的なカリスマ性に魅せられ記念館設立を決意。
+                </p>
+
+                <p data-ja="将来的には彼の故郷、ニューデリーへの展開を目指しています。"
+                   data-hi="भविष्य में, उनके जन्मस्थान नई दिल्ली में भी इस स्मारक के विस्तार का लक्ष्य रखा गया है।">
+                    将来的には彼の故郷、ニューデリーへの展開を目指しています。
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery" id="gallery">
+
+        <div class="section-title"
+            data-ja="GALLERY"
+            data-hi="गैलरी">
+            GALLERY
+        </div>
+
+        <div class="gallery-grid">
+            <img src="はたかずまプリクラ.jpg">
+            <img src="consentrate.jpg">
+            <img src="eating.jpg">
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p data-ja="© HATAKAZUMA MEMORIAL MUSEUM"
+           data-hi="© हाता काज़ुमा स्मारक संग्रहालय">
+            © HATAKAZUMA MEMORIAL MUSEUM
+        </p>
+    </footer>
+
+    <!-- JavaScript：スライダー -->
+    <script>
+        const slides = document.querySelectorAll(".slide");
+        let index = 0;
+
+        setInterval(() => {
+            slides[index].classList.remove("active");
+            index++;
+            if (index >= slides.length) index = 0;
+            slides[index].classList.add("active");
+        }, 5000);
+    </script>
+
+    <!-- JavaScript：言語切り替え -->
+    <script>
+        function switchLang(lang) {
+            document.querySelectorAll("[data-ja]").forEach(el => {
+                el.textContent = el.getAttribute(`data-${lang}`);
+            });
+        }
+    </script>
+
+    <script>
+    function switchLang(lang) {
+        // 言語を保存
+        localStorage.setItem("lang", lang);
+
+        // テキスト切り替え
+        document.querySelectorAll("[data-ja]").forEach(el => {
+            el.textContent = el.getAttribute(`data-${lang}`);
+        });
+    }
+
+    // ページ読み込み時に保存された言語を適用
+    window.addEventListener("load", () => {
+        const savedLang = localStorage.getItem("lang") || "ja";
+        switchLang(savedLang);
+    });
+    </script>
+
+
+</body>
+
+</html>
