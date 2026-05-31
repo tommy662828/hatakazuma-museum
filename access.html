@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-ja="アクセス情報 | はたかずま記念館"
+            data-hi="आगमन जानकारी | हाता काज़ुमा स्मारक संग्रहालय">
+        アクセス情報 | はたかずま記念館
+    </title>
+
+    <link rel="stylesheet" href="access.css">
+</head>
+
+<body>
+
+    <nav>
+
+        <a href="issin.html" class="logo"
+          data-ja="はたかずま記念館"
+          data-hi="हाता काज़ुमा स्मारक संग्रहालय">
+          はたかずま記念館
+         </a>
+
+
+        <ul>
+            <li><a href="exhibition.html"
+                data-ja="常設展示"
+                data-hi="स्थायी प्रदर्शनी">常設展示</a></li>
+
+            <li><a href="donation.html"
+                data-ja="寄付のお願い"
+                data-hi="दान हेतु निवेदन">寄付のお願い</a></li>
+
+            <li><a href="access.html"
+                data-ja="アクセス"
+                data-hi="पहुंच">アクセス</a></li>
+        </ul>
+
+        <div class="lang-switcher">
+            <button onclick="switchLang('ja')">日本語</button>
+            <button onclick="switchLang('hi')">हिन्दी</button>
+        </div>
+
+    </nav>
+
+    <header>
+        <h1 data-ja="アクセス情報"
+            data-hi="आगमन संबंधी जानकारी">
+            アクセス情報
+        </h1>
+    </header>
+
+    <div class="container">
+
+        <div class="access-box">
+
+            <h2 data-ja="所在地"
+                data-hi="स्थान विवरण">
+                所在地
+            </h2>
+
+            <div class="info">
+                <p data-ja="〒651-0094"
+                   data-hi="पिन कोड: 651-0094">
+                    〒651-0094
+                </p>
+
+                <p data-ja="兵庫県神戸市中央区琴ノ緒町5丁目7-1"
+                   data-hi="5-7-1 कोतोनोओचो, चुओ-कू, कोबे शहर, ह्योगो प्रान्त">
+                    兵庫県神戸市中央区琴ノ緒町5丁目7-1
+                </p>
+
+                <p data-ja="営業時間：9:00〜17:00"
+                   data-hi="खुलने का समय: 9:00〜17:00">
+                    営業時間：9:00〜17:00
+                </p>
+
+                <p data-ja="休館日：毎週月曜日"
+                   data-hi="बंद दिवस: प्रत्येक सोमवार">
+                    休館日：毎週月曜日
+                </p>
+
+                <p data-ja="電話番号：00-0000-0000"
+                   data-hi="दूरभाष: 00-0000-0000">
+                    電話番号：00-0000-0000
+                </p>
+            </div>
+
+        </div>
+
+        <div class="access-box">
+
+            <h2 data-ja="アクセス方法"
+                data-hi="पहुंचने के तरीके">
+                アクセス方法
+            </h2>
+
+            <div class="info">
+                <p data-ja="・JR三ノ宮駅から徒歩4分"
+                   data-hi="・JR सन्नोमिया स्टेशन से पैदल 4 मिनट">
+                    ・JR三ノ宮駅から徒歩4分
+                </p>
+
+                <p data-ja="・三宮ICから車で4分"
+                   data-hi="・सन्नोमिया IC से कार द्वारा 4 मिनट">
+                    ・三宮ICから車で4分
+                </p>
+
+                <p data-ja="・駐車場あり（130台）"
+                   data-hi="・पार्किंग उपलब्ध (130 वाहन क्षमता)">
+                    ・駐車場あり（130台）
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <p data-ja="© HATAKAZUMA MEMORIAL MUSEUM"
+           data-hi="© हाता काज़ुमा स्मारक संग्रहालय">
+            © HATAKAZUMA MEMORIAL MUSEUM
+        </p>
+    </footer>
+
+    <!-- JavaScript：言語切り替え（localStorage対応） -->
+    <script>
+        function switchLang(lang) {
+            localStorage.setItem("lang", lang);
+
+            document.querySelectorAll("[data-ja]").forEach(el => {
+                el.textContent = el.getAttribute(`data-${lang}`);
+            });
+        }
+
+        window.addEventListener("load", () => {
+            const savedLang = localStorage.getItem("lang") || "ja";
+            switchLang(savedLang);
+        });
+    </script>
+
+</body>
+</html>
