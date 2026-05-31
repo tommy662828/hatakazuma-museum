@@ -266,10 +266,16 @@ footer{
         align-self: flex-end;
     }
 
-    /* スライダーの高さ調整 */
+    /* nav が高いのでスライダーを下げる */
     .slider{
-        height: 60vh;
-        margin-top: 120px;
+        margin-top: 170px; /* ← ここが超重要 */
+        height: 55vh;      /* スマホでは少し低く */
+    }
+
+    /* スライド画像が見切れないように */
+    .slide{
+        object-fit: contain; /* cover → contain */
+        height: 100%;
     }
 
     /* ABOUT を縦並びに */
@@ -280,7 +286,7 @@ footer{
     }
 
     .about-container img{
-        width: 80%;
+        width: 90%;
         height: auto;
     }
 
@@ -299,7 +305,9 @@ footer{
     }
 
     .gallery-grid img{
-        height: 250px;
+        height: auto;
+        max-height: 250px;
+        object-fit: cover;
     }
 
     /* セクションの余白調整 */
