@@ -201,4 +201,9 @@ footer{
     .container{
         margin: 40px auto;
     }
+
+    /* nav が縦に伸びるので header を下げる */
+    header{
+        padding-top: 200px; /* ← ここが最重要 */
+    }
 }
