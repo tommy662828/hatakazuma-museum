@@ -1,0 +1,249 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #0f0f0f;
+    color: white;
+    font-family: sans-serif;
+}
+
+nav{
+    width: 100%;
+
+    position: fixed;
+    top: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 25px 60px;
+
+    z-index: 100;
+
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+}
+
+.logo{
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover{
+    color: gold;
+}
+
+
+/* ヘッダー */
+
+header{
+    width: 100%;
+
+    padding: 140px 20px 80px;
+
+    text-align: center;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,0.6),
+    rgba(0,0,0,0.6)
+    );
+}
+
+header h1{
+    font-size: 55px;
+
+    letter-spacing: 6px;
+
+    margin-bottom: 20px;
+
+    
+}
+
+
+
+
+/* コンテナ */
+
+.container{
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 80px auto;
+}
+
+
+/* 展示ボックス */
+
+.exhibition-box{
+    display: flex;
+
+    align-items: center;
+
+    gap: 60px;
+
+    background: #181818;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 25px;
+
+    padding: 40px;
+
+    margin-bottom: 60px;
+
+    box-shadow: 0 0 25px rgba(0,0,0,0.4);
+}
+
+
+/* 画像 */
+
+.exhibition-box img{
+    width: 45%;
+
+    height: auto;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+}
+
+
+/* テキスト */
+
+.exhibition-text{
+    flex: 1;
+}
+
+.exhibition-text h2{
+    font-size: 34px;
+
+    margin-bottom: 25px;
+
+    color: gold;
+
+    letter-spacing: 3px;
+}
+
+.exhibition-text p{
+    line-height: 2.2;
+
+    color: #ddd;
+
+    font-size: 17px;
+}
+
+
+/* 左右反転 */
+
+.reverse{
+    flex-direction: row-reverse;
+}
+
+
+/* フッター */
+
+footer{
+    text-align: center;
+
+    padding: 50px;
+
+    color: gray;
+
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+
+/* スマホ対応 */
+
+@media(max-width: 900px){
+
+    nav{
+        padding: 20px;
+    }
+
+    nav ul{
+        gap: 20px;
+
+        font-size: 12px;
+    }
+
+    header h1{
+        font-size: 40px;
+    }
+
+    .exhibition-box{
+        flex-direction: column;
+
+        padding: 30px;
+    }
+
+    .reverse{
+        flex-direction: column;
+    }
+
+    .exhibition-box img{
+        width: 100%;
+
+        height: 250px;
+    }
+
+    .exhibition-text h2{
+        font-size: 26px;
+    }
+
+    .exhibition-text p{
+        font-size: 15px;
+    }
+
+}
+
+.kakasehenn {
+    color: red;
+}
+
+/* 言語切り替えボタン（ナビ内） */
+.lang-switcher {
+    display: flex;
+    gap: 10px;
+}
+
+.lang-switcher button {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+
+    padding: 6px 12px;
+
+    font-size: 13px;
+    cursor: pointer;
+
+    backdrop-filter: blur(6px);
+
+    transition: 0.3s;
+}
+
+.lang-switcher button:hover {
+    background: rgba(255, 215, 0, 0.3);
+    border-color: gold;
+    color: gold;
+}
